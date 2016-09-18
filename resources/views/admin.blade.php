@@ -8,7 +8,11 @@
                 <div class="panel-heading">Admin Dashboard</div>
 
                 <div class="panel-body">
-                    {{ $data }}
+                    @if( $data == "1" )
+                        {{ Html::linkaction('HomeController@stop','STOP TEST',[],['class' => 'btn']) }}
+                    @else
+                        {{ Html::linkaction('HomeController@start','START TEST',[],['class' => 'btn']) }}
+                    @endif
                 </div>
             </div>
         </div>

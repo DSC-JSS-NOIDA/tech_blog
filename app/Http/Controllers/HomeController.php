@@ -32,7 +32,10 @@ class HomeController extends Controller
     {
         if(\Auth::user()->admin==1)
         {
-            $data= \App\Event::where('id','1')->select(array('status'))->get();
+            $data= \App\Event::
+                where('id','1')
+                ->select(array('status'))
+                ->get();
             $data= $data->toArray();
             $data= $data["0"];
             $data= $data["status"];
@@ -40,5 +43,21 @@ class HomeController extends Controller
         }
         else
             abort(404);
+    }
+
+    public function start()
+    {
+        \App\Event::
+            where('id', 1)
+            ->update(['status' => 1]);
+        return redirect('/admin');
+    }
+
+    public function stop()
+    {
+        \App\Event::
+            where('id', 1)
+            ->update(['status' => 0]);
+        return redirect('/admin');
     }
 }
