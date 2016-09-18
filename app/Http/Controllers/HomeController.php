@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Event;
 
 class HomeController extends Controller
 {
@@ -25,5 +26,19 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function admin()
+    {
+        if(\Auth::user()->admin==1)
+        {
+            $data= \App\Event::where('id','1')->select(array('status'))->get();
+            $data= $data->toArray();
+            $data= $data["0"];
+            $data= $data["status"];
+            return view('admin',compact('data'));
+        }
+        else
+            abort(404);
     }
 }
