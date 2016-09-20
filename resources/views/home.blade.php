@@ -12,10 +12,15 @@
                     <a href="admin" class="btn">VISIT ADMIN PANEL</a>
                 @else
                     You are logged in!
+                    
                 @endif
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+    <script type="text/javascript" src="http://localhost/tech_blog/resources/assets/js/user.js"></script>
 @endsection

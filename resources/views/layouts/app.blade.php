@@ -24,6 +24,9 @@
             margin-right: 6px;
         }
     </style>
+
+@yield('js')
+
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
@@ -74,9 +77,11 @@
 
     @yield('content')
 
+</body>
+</html>
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
-</body>
-</html>
+    {{-- <script src="{{ elixir('tech_blog/resources/assets/js/app.js') }}"></script> --}}
+
+@yield('script')

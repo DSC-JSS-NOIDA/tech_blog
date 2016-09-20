@@ -25,7 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+            $data= \App\Event::
+                where('id','1')
+                ->select(array('status'))
+                ->get();
+            $data= $data->toArray();
+            $data= $data["0"];
+            $data= $data["status"];
+            return view('home',compact('data'));
     }
 
     public function admin()
@@ -59,5 +66,18 @@ class HomeController extends Controller
             where('id', 1)
             ->update(['status' => 0]);
         return redirect('/admin');
+    }
+
+    public function user()
+    {
+        $data= \App\Event::
+            where('id','1')
+            ->select(array('status'))
+            ->get();
+        $data= $data->toArray();
+        $data= $data["0"];
+        $data= $data["status"];
+        echo $data;
+        return view('home',compact('data'));
     }
 }
