@@ -85,6 +85,6 @@ class HomeController extends Controller
         if(\Auth::user()->admin==1)
             return redirect('/admin');
         else
-            return redirect('/home/editor');
+            return view('editor');
     }
 }

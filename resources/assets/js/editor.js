@@ -3,19 +3,19 @@ $(document).ready(function(){
         // console.log(1);
         $.ajax({
             type: 'GET',
-            url: 'home/checkevent',
+            url: 'checkevent',
             data: '',
             success: function(data){
                 console.log('1');
                 if(data==1)
-                {
-                    $("#inactive").hide();
-                    $("#active").show();
+                {    
+                    $('#inactive').hide();
+                    $('#active').show();
                 }
                 else
                 {
-                    $("#active").hide();
-                    $("#inactive").show();
+                    $('#active').hide();
+                    $('#inactive').show();
                 }
             }
         });
