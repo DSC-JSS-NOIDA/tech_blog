@@ -10,9 +10,13 @@
                 <div class="panel-body">
                 @if(\Auth::user()->admin==1)
                     <a href="admin" class="btn">VISIT ADMIN PANEL</a>
-                @else
-                    You are logged in!
-                    
+                @<?php else: ?>
+                    <div id="active">
+                        <a href="home/editor" class="btn">Start Writing Article</a>
+                    </div>
+                    <div id="inactive">
+                        Waiting for the event to start ...
+                    </div>
                 @endif
                 </div>
             </div>

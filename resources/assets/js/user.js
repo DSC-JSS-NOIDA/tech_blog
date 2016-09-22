@@ -1,15 +1,23 @@
 $(document).ready(function(){
     function checkevent(){
-        console.log(1);
+        // console.log(1);
         $.ajax({
-            type: 'POST',
-            url: 'http://localhost/tech_blog/checkevent',
-            data: "val=100",
+            type: 'GET',
+            url: 'home/checkevent',
+            data: '',
             success: function(data){
-                console.log(data);
-         		console.log("Good");
+                if(data==1)
+                {
+                    $("#inactive").hide();
+                    $("#active").show();
+                }
+                else
+                {
+                    $("#active").hide();
+                    $("#inactive").show();
+                }
             }
         });
     }
-    setInterval(checkevent,5000);
+    setInterval(checkevent,500);
 });

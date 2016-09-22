@@ -77,7 +77,14 @@ class HomeController extends Controller
         $data= $data->toArray();
         $data= $data["0"];
         $data= $data["status"];
-        echo $data;
-        return view('home',compact('data'));
+        return $data;
+    }
+
+    public function editor()
+    {
+        if(\Auth::user()->admin==1)
+            return redirect('/admin');
+        else
+            return redirect('/home/editor');
     }
 }

@@ -22,7 +22,8 @@ Route::get('/home', 'HomeController@index');
 Route::get('/admin','HomeController@admin');
 Route::get('/admin/stop','HomeController@stop');
 Route::get('/admin/start','HomeController@start');
-Route::post('/checkevent','HomeController@user');
+Route::get('/home/checkevent','HomeController@user');
+Route::get('home/editor','HomeController@user');
 
 
 Route::group(['prefix' => 'administration', 'middleware' => ['auth', 'admin']], function() {
