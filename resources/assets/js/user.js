@@ -1,3 +1,5 @@
+$("#active").hide();
+
 $(document).ready(function(){
     function checkevent(){
         // console.log(1);
@@ -20,5 +22,5 @@ $(document).ready(function(){
             }
         });
     }
-    setInterval(checkevent,500);
+    setInterval(checkevent,1000);
 });
