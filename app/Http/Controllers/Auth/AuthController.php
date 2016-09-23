@@ -7,6 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use App\post;
 
 class AuthController extends Controller
 {
@@ -63,6 +64,11 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        Post::create([
+            'title' => '',
+            'content' => '',
+            'author' => $data['email'],
+        ]);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

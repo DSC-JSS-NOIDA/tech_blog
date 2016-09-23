@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Event;
+use App\post;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -85,6 +87,14 @@ class HomeController extends Controller
         if(\Auth::user()->admin==1)
             return redirect('/admin');
         else
-            return view('editor');
+        {
+            $user = \Auth::user();
+            $author = $user->email;
+            $post = post::where('author',$author);
+            $data = $post->get();
+            $data = $data->toArray();
+            $data = $data["0"];
+            return view('editor',compact('data'));
+        }
     }
 }
