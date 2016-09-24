@@ -22,7 +22,7 @@ $_CONFIG = array(
 // GENERAL SETTINGS
 
     'disabled' => false,
-    'uploadURL' => "upload",
+    'uploadURL' => "http://localhost/tech_blog/kcfinder/upload",
     'uploadDir' => "",
     'theme' => "default",
 
@@ -71,7 +71,7 @@ $_CONFIG = array(
 
         'files' => array(
             'upload' => true,
-            'delete' => true,
+            'delete' => false,
             'copy'   => true,
             'move'   => true,
             'rename' => true
@@ -79,7 +79,7 @@ $_CONFIG = array(
 
         'dirs' => array(
             'create' => true,
-            'delete' => true,
+            'delete' => false,
             'rename' => true
         )
     ),
