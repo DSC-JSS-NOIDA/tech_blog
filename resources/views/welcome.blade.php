@@ -8,7 +8,12 @@
                 <div class="panel-heading">Welcome</div>
 
                 <div class="panel-body">
-                    Your Application's Landing Page.
+                    @foreach ($posts as $post)
+                        <a href=post/{{ $post['id'] }}>
+                            {{ $post['id'] }}. 
+                            {{ $post['title'] }}<br>
+                        </a>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','PostsController@allpost');
+Route::get('/post/{id}','PostsController@showpost');
 
 Route::auth();
 

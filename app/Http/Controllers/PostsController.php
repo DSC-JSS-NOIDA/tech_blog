@@ -18,4 +18,21 @@ class PostsController extends Controller
 		$post -> update($data);
 		return redirect('home/editor');
 	}
+
+	public function allpost()
+	{
+		$posts = post::get();
+		$posts = $posts->toArray();
+		// var_dump($posts[0]['title']);
+		return view('welcome',compact('posts'));
+	}
+
+	public function showpost($id)
+	{
+		// echo $id;
+		$post = post::find($id);
+		$post = $post->toArray();
+		// var_dump($post);
+		return view('post',compact('post'));
+	}
 }
