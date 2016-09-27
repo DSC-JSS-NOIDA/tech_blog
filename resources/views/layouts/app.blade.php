@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Tech Blog" />
+    <meta property="og:description"   content="Blogging Website" />
+    <meta property="og:image"         content="http://jssgdg.16mb.com/wp-content/themes/gdgtheme/gdg_assets/images/logo.png" />
 
     <title>Laravel</title>
 
@@ -33,6 +37,15 @@
 
 </head>
 <body id="app-layout">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=1637816976548872";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
