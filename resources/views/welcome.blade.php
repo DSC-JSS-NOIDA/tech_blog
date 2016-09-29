@@ -1,22 +1,36 @@
 @extends('layouts.app')
 
+@section('js')
+    <link rel="stylesheet" href="http://localhost/tech_blog/resources/assets/css/welcome.css">
+@endsection
+
 @section('content')
 <div class="container">
+    <div class="row head">
+        Trending in Tech
+    </div>
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Welcome</div>
-
-                <div class="panel-body">
-                    @foreach ($posts as $post)
-                        <a href=post/{{ $post['id'] }}>
-                            {{ $post['id'] }}. 
-                            {{ $post['title'] }}<br>
-                        </a>
-                    @endforeach
+        @foreach ($posts as $post)
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="row" id="postdetail">
+                        <div class="col-xs-11" id="leftpost">
+                            <span class="lefttriangle"></span>
+                    <a href=post/{{ $post['id'] }}>
+                            <div id="posttitle">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               {{ $post['id'] }}. 
+                               {{ $post['title'] }}
+                            </div>
+                    </a>
+                        </div>
+                        <div class="col-xs-1" id="righttriangle">
+                    <a href=post/{{ $post['id'] }}>
+                            <span class="righttriangle"></span>
+                    </a>
+                        </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
 </div>
 @endsection
