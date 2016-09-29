@@ -1,0 +1,32 @@
+nav.navbar
+{
+	background-color: #280547;
+}
+
+a.navbar-brand
+{
+	color: #ffffff;
+	font-size: 2em;
+}
+
+a.nav-menu
+{
+	color: #ffffff;
+}
+
+a.nav-menu:hover
+{
+	color: #280547;
+}
+
+span.icon-bar
+{
+	background-color: #ffffff;
+}
+div.footer
+{
+	background-color: #e2e2e2;
+	min-height: 30px;
+	line-height: 30px;
+	text-align: center;
+}

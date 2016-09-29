@@ -23,5 +23,5 @@ $(document).ready(function(){
             }
         });
     }
-    setInterval(checkevent,1000);
+    setInterval(checkevent,10000);
 });
