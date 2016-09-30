@@ -1,10 +1,14 @@
 @extends('layouts.app')
 
+@section('js')
+    <link rel="stylesheet" href="http://localhost/tech_blog/resources/assets/css/login.css">
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+            <div class="panel">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
@@ -42,7 +46,7 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember"> Remember Me
+                                        <input id="checkbox" type="checkbox" name="remember"> Remember Me
                                     </label>
                                 </div>
                             </div>

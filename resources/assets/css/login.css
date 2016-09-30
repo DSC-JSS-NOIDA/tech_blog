@@ -1,0 +1,31 @@
+div.panel
+{
+	border-radius: 0px;
+	border-color: #280547;
+}
+div.panel-heading
+{
+	border-radius: 0px;
+	background-color: #280547;
+	color: #fff;
+}
+input.form-control
+{
+	border-radius: 0px;
+	border-color: #280547;
+}
+input:focus
+{
+	background-color: #280547;
+	color: #fff;
+}
+button.btn.btn-primary
+{
+	background-color: #280547;
+	border-radius: 0px;
+	border-color: #280547;
+}
+a.btn.btn-link
+{
+	visibility: hidden;
+}

@@ -1,7 +1,7 @@
 $("#active").hide();
 $("#inactive").hide();
 
-$(document).ready(function(){
+// $(document).ready(function(){
     function checkevent(){
         // console.log(1);
         $.ajax({
@@ -23,5 +23,5 @@ $(document).ready(function(){
             }
         });
     }
-    setInterval(checkevent,10000);
-});
+    setInterval(checkevent,5000);
+// });

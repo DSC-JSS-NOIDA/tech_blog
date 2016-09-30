@@ -1,0 +1,40 @@
+div.title
+{
+	float: left;
+	font-size: 1.3em;
+	color: #fff;
+	line-height: 100%;
+	padding: 5px 5px 5px 5px;
+	min-height: 30px;
+}
+div.author
+{
+	color: #fff;
+	bottom: 0px;
+	min-height: 30px;
+	line-height: 100%;
+	padding-top: 10px;
+}
+div.like
+{
+	float: right;
+	padding: 5px 5px 5px 5px;
+}
+div.row.header
+{
+	margin: 5px 5px 5px 5px;
+	background-color: #280547;
+	border-radius: 0px;
+	min-height: 30px;
+}
+div.row.content
+{
+	padding: 10px 10px 10px 10px;
+	margin: 5px 5px 5px 5px;
+	border-color: #280547;
+	border: 2px solid #280547;
+}
+._2tga		
+{
+	background: red;	
+}

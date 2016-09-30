@@ -2,18 +2,27 @@
 
 @section('js')
     <script src="http://localhost/tech_blog/ckeditor/ckeditor.js"></script>
+    <link rel="stylesheet" href="http://localhost/tech_blog/resources/assets/css/editor.css">
 @endsection
 
 @section('content')
 
 	<div id="active">
-		<form action="update" method="post">
-			<label>Title</label>
-			<input type="text" value="{{ $data['title']  }}" name="title" required="" />
-			<textarea class="ckeditor" value="{{ $data['content']  }}" name="content" required="" />{{ $data['content']  }}</textarea>
-			<input type="submit" name="submit" class="btn" />
-			<input type="hidden" name="_token" value="{{ csrf_token() }}">
-		</form>
+		<div class="container">
+			<form action="update" method="post">
+				<div class="row title">
+					<label class="title">Title</label>&nbsp;
+					<input type="text" class="title" value="{{ $data['title']  }}" name="title" required="" />
+				</div>
+				<div class="row">
+					<textarea class="ckeditor" value="{{ $data['content']  }}" name="content" required="" />{{ $data['content']  }}</textarea>
+				</div>
+				<div class="row submit">
+					<input type="submit" name="submit" class="btn" value="PUBLISH"/>
+				</div>
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+			</form>
+		</div>
 	</div>
 	<div id="inactive">
 		THE EVENT IS OVER

@@ -1,0 +1,41 @@
+/*a.btn {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  font-size: 50px;
+  color: #280547;
+  line-height: 200px;
+  text-align: center;
+  background: #fff;
+  border-color: #280547;
+  border-width: 0.5em;
+}
+div#active
+{
+	text-align: center;
+}*/
+div#active
+{
+	text-align: center;
+}
+div#inactive
+{
+	text-align: center;
+}
+
+
+@media all and (max-width: 1024px) and (min-width: 768px){
+img.image{
+   width:500px; //or something like this
+    }
+}
+@media all and (max-width: 768px) and (min-width: 546px){
+img.image{
+   width:400px; //or something like this
+    }
+}
+@media all and (max-width: 546px) and (min-width: 100px){
+img.image{
+   width:250px; //or something like this
+    }
+}

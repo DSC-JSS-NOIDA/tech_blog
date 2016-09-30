@@ -1,3 +1,7 @@
+body
+{
+	margin-bottom: 30px;
+}
 nav.navbar
 {
 	background-color: #280547;
@@ -26,7 +30,12 @@ span.icon-bar
 div.footer
 {
 	background-color: #e2e2e2;
-	min-height: 30px;
-	line-height: 30px;
-	text-align: center;
+    position:fixed;
+    height:30px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+    line-height: 30px;
+    text-align: center;
 }

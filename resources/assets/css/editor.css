@@ -1,0 +1,42 @@
+label.title
+{
+	font-size: 1.5em;
+	color: #280547;
+}
+div.row.title
+{
+	text-align: center;
+}
+input.title
+{
+	border-radius: 0px;
+	border-color: #280547;
+	max-width: 800px;
+	width: 50%;
+	font-size: 1.3em;
+	height: 28px;
+	margin-bottom: 15px;
+}
+input:focus
+{
+	background-color: #280547;
+	color: #fff;
+}
+div.row.submit
+{
+	text-align: center;
+}
+input.btn
+{
+	margin-top: 15px;
+	background-color: #280547;
+	border-radius: 0px;
+	border-color: #280547;
+	color: #fff;
+}
+div#cke_content
+{
+	border-radius: 0px;
+	border-color: #280547;
+	margin: 5px 5px 5px 5px;
+}
