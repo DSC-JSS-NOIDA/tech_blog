@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('js')
-    <link rel="stylesheet" href="http://localhost/tech_blog/resources/assets/css/dashboard.css">
+    <link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
 @endsection
 
 @section('content')
@@ -12,12 +12,12 @@
         @<?php else: ?>
             <div id="active">
                 <a href="home/editor" class="btn">
-                    <img class="image" src="http://localhost/tech_blog/resources/assets/img/eventstart.png">
+                    <img class="image" src="{{asset('img/eventstart.png')}}">
                 </a>
             </div>
             <div id="inactive">
                 <a class="btn">
-                    <img class="image" src="http://localhost/tech_blog/resources/assets/img/waiting.png">
+                    <img class="image" src="{{asset('img/waiting.png')}}">
                 </a>
             </div>
         @endif
@@ -26,5 +26,5 @@
 @endsection
 
 @section('script')
-    <script type="text/javascript" src="http://localhost/tech_blog/resources/assets/js/user.js"></script>
+    <script type="text/javascript" src="{{asset('js/user.js')}}"></script>
 @endsection

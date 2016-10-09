@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('js')
-    <script src="http://localhost/tech_blog/ckeditor/ckeditor.js"></script>
-    <link rel="stylesheet" href="http://localhost/tech_blog/resources/assets/css/editor.css">
+    <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('css/editor.css')}}">
 @endsection
 
 @section('content')
@@ -30,5 +30,5 @@
 @endsection
 
 @section('script')
-    <script type="text/javascript" src="http://localhost/tech_blog/resources/assets/js/editor.js"></script>
+    <script type="text/javascript" src="{{asset('js/editor.js')}}"></script>
 @endsection

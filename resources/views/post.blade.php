@@ -2,7 +2,7 @@
 
 @section('js')
 	<meta property="og:url"           content="http://localhost:8000/post/{{$post['id']}}" />
-    <link rel="stylesheet" href="http://localhost/tech_blog/resources/assets/css/post.css">
+    <link rel="stylesheet" href="{{asset('css/post.css')}}">
 @endsection
 
 @section('content')
@@ -32,5 +32,5 @@
 @endsection
 
 @section('script')
-    <script type="text/javascript" src="http://localhost/tech_blog/resources/assets/js/post.js"></script>
+    <script type="text/javascript" src="{{asset('js/post.js')}}	"></script>
 @endsection
