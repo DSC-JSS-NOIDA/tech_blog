@@ -35,4 +35,10 @@ class PostsController extends Controller
 		// var_dump($post);
 		return view('post',compact('post'));
 	}
+
+    public function leader()
+    {
+        return view('leaderboard');
+    }
+
 }

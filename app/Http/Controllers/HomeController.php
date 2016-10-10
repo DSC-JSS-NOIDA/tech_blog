@@ -97,4 +97,5 @@ class HomeController extends Controller
             return view('editor',compact('data'));
         }
     }
+
 }

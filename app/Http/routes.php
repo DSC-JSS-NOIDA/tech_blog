@@ -13,6 +13,7 @@
 
 Route::get('/','PostsController@allpost');
 Route::get('/post/{id}','PostsController@showpost');
+Route::get('/leaderboard','PostsController@leader');		
 
 Route::auth();
 
@@ -24,7 +25,6 @@ Route::get('/admin/start','HomeController@start');
 Route::get('/home/checkevent','HomeController@user');
 Route::get('home/editor','HomeController@editor');
 Route::post('home/update','PostsController@update');
-
 
 Route::group(['prefix' => 'administration', 'middleware' => ['auth', 'admin']], function() {
 	Route::get('/', 'Admin\HomeController@index');
