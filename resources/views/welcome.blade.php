@@ -10,8 +10,10 @@
         Trending in Tech
     </div>
     <div class="row">
+    <?php $i=0; ?>
         @foreach ($posts as $post)
             @if($post['title']!='')
+                <?php $i++; ?>
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="row" id="postdetail">
                             <div class="col-xs-11" id="leftpost">
@@ -19,7 +21,8 @@
                         <a href=post/{{ $post['id'] }}>
                                 <div id="posttitle">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                   {{ $post['id'] }}. 
+                                   <!-- {{ $post['id'] }}. -->
+                                   {{$i}}. 
                                    {{ $post['title'] }}
                                 </div>
                         </a>

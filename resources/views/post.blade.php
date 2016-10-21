@@ -15,7 +15,7 @@
 		<div id="author" class="col-xs-9 col-md-4 col-lg-4">
 			&nbsp; by {{ $post['author'] }}
 		</div>
-		<div id="like" class="col-xs-3 col-md-2 col-lg-2">
+<!-- 		<div id="like" class="col-xs-3 col-md-2 col-lg-2">
 			<div class="fb-like" 
 				data-href="http://techblog.pagekite.me/post/{{$post['id']}}" 
 				data-layout="button_count" 
@@ -23,7 +23,8 @@
 				data-show-faces="true">
 			</div>
 		</div>
-	</div>
+ -->
+ 	</div>
 	<div class="row content">
 		{!! $post['content'] !!}
 	</div>
