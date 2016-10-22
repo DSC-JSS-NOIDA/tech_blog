@@ -13,7 +13,7 @@
 
 Route::get('/','PostsController@allpost');
 Route::get('/post/{id}','PostsController@showpost');
-Route::get('/leaderboard','PostsController@leader');		
+Route::get('/like{user_id}{post_id}','PostsController@like');
 
 Route::auth();
 

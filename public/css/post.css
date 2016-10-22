@@ -27,3 +27,18 @@ div.row.header
 	line-height: 35px;
 	max-height: 70px;
 }
+.heart
+{
+	position: fixed;
+	right: 10px;
+	height: 70px;
+	z-index: 1000;
+	bottom: 30px;
+}
+.count
+{
+	position: fixed;
+	right: 40px;
+	z-index: 1001;
+	bottom: 55px;
+}

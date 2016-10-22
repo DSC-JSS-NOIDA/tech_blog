@@ -1,4 +1,4 @@
-	@extends('layouts.app')
+@extends('layouts.app')
 
 @section('js')
 	<meta property="og:url"           content="http://localhost:8000/post/{{$post['id']}}" />
@@ -29,9 +29,22 @@
 		{!! $post['content'] !!}
 	</div>
 </div>
+<div>
+	@if(empty($my_like))
+		<img class="heart" id="heart_inactive" src="{{asset('img/heart_inactive.png')}}">
+		<span class="count">{{$like}}</span>
+	@else
+		<img class="heart" id="heart_active" src="{{asset('img/heart_active.png')}}">
+		<span class="count">{{$like}}</span>	
+	@endif
+</div>
 
 @endsection
 
 @section('script')
+	<script>
+		var user_id = {{$user_id}};
+		var post_id = {{$id}}
+	</script>
     <script type="text/javascript" src="{{asset('js/post.js')}}	"></script>
 @endsection
