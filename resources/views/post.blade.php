@@ -30,12 +30,20 @@
 	</div>
 </div>
 <div>
-	@if(empty($my_like))
-		<img class="heart" id="heart_inactive" src="{{asset('img/heart_inactive.png')}}">
-		<span class="count">{{$like}}</span>
+	@if($user_id)
+	 	@if(empty($my_like))
+	 		<!-- not liked -->
+			<img class="heart" id="heart_active" src="{{asset('img/heart_active.png')}}">
+			<span class="count">{{$like}}</span>
+		@else
+			<!-- already liked -->
+			<img class="heart" id="heart_active" src="{{asset('img/heart_inactive.png')}}">
+			<span class="count">{{$like}}</span>	
+		@endif
 	@else
-		<img class="heart" id="heart_active" src="{{asset('img/heart_active.png')}}">
-		<span class="count">{{$like}}</span>	
+		<!-- Not logged in -->
+		<img class="heart" id="heart_login" src="{{asset('img/heart_login.png')}}">
+		<span class="count">{{$like}}</span>
 	@endif
 </div>
 
@@ -44,7 +52,7 @@
 @section('script')
 	<script>
 		var user_id = {{$user_id}};
-		var post_id = {{$id}}
+		var post_id = {{$id}};
 	</script>
     <script type="text/javascript" src="{{asset('js/post.js')}}	"></script>
 @endsection

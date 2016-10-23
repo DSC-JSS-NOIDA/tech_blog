@@ -30,30 +30,56 @@ class PostsController extends Controller
 
 	public function showpost($id)
 	{
-		// echo $id;
-		$user_id=1;
+		$user = \Auth::user();
+		if($user)
+		{
+			$user_id= $user->id;
+			$my_like = like::where([
+						['post_id','=',$id],
+						['user_id','=',$user_id]
+					])->get();
+			$my_like = $my_like->toArray();
+			// echo "U:".$user_id."P:".$id;
+		}
+		else
+			$user_id=0;
+		// var_dump($my_like);
 		$post = post::find($id);
 		$post = $post->toArray();
 		$like = like::get()->where('post_id',$id)->count();
-		$my_like = like::where([
-					['post_id','=',$id],
-					['user_id','=',$user_id]
-				])->get();
-		$my_like = $my_like->toArray();
-		//var_dump($my_like);
-		//echo $my_like;
-		//  if(empty($my_like))
-		//  	echo "null";
-		//echo $like;
-		// var_dump($post);
 		return view('post',compact('post','like','my_like','user_id','id'));
 	}
 
-	public function like($data)
+	public function like($post_id,$user_id)
 	{
-		json_decode($request);
-		var_dump($request);
-		// var_dump($request);
-		//return "Hello";
+		if(\Auth::user())
+		{
+			$my_like = like::where([
+						['post_id','=',$post_id],
+						['user_id','=',$user_id]
+					])->get();
+			$my_like = $my_like->toArray();
+			if(empty($my_like))
+			{
+				//like
+				like::insert(
+						['post_id'=>$post_id,'user_id'=>$user_id]
+					);
+				$like = like::get()->where('post_id',$post_id)->count();
+				echo $like;
+			}
+			else
+			{
+				//unlike
+				like::where([
+						['post_id','=',$post_id],
+						['user_id','=',$user_id]
+					])->delete();
+				$like = like::get()->where('post_id',$post_id)->count();
+				echo $like;
+			}
+		}
+		else
+			return view('auth.login');
 	}
 }
