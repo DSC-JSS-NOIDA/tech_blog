@@ -25,6 +25,7 @@
 		</div>
 	</div>
 	<div id="inactive">
+		<!-- ADD the event over image -->
 		THE EVENT IS OVER
 	</div>
 @endsection

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\post;
 use App\like;
+use App\comments;
 
 class PostsController extends Controller
 {
@@ -47,7 +48,12 @@ class PostsController extends Controller
 		$post = post::find($id);
 		$post = $post->toArray();
 		$like = like::get()->where('post_id',$id)->count();
-		return view('post',compact('post','like','my_like','user_id','id'));
+		$comments = comments::join('users','comments.user_id','=','users.id')
+								->select('comments.*','users.name')
+								->where('comments.post_id','=',$id)
+								->get();
+		$comments = $comments->toArray();
+		return view('post',compact('post','like','my_like','user_id','id','comments'));
 	}
 
 	public function like($post_id,$user_id)

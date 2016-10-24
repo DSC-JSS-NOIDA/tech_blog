@@ -56,18 +56,28 @@ class HomeController extends Controller
 
     public function start()
     {
-        \App\Event::
-            where('id', 1)
-            ->update(['status' => 1]);
-        return redirect('/admin');
+        if(\Auth::user()->admin==1)
+        {
+            \App\Event::
+                where('id', 1)
+                ->update(['status' => 1]);
+            return redirect('/admin');
+        }
+        else
+            abort(404);
     }
 
     public function stop()
     {
-        \App\Event::
-            where('id', 1)
-            ->update(['status' => 0]);
-        return redirect('/admin');
+        if(\Auth::user()->admin==1)
+        {
+            \App\Event::
+                where('id', 1)
+                ->update(['status' => 0]);
+            return redirect('/admin');
+        }
+        else
+            abort(404);
     }
 
     public function user()

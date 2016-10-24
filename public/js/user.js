@@ -22,5 +22,5 @@ $(document).ready(function(){
             }
         });
     }
-    setInterval(checkevent,2000);
+    setInterval(checkevent,500);
 });

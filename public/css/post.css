@@ -42,3 +42,29 @@ div.row.header
 	z-index: 1001;
 	bottom: 55px;
 }
+#comment_row
+{
+	padding: 5px 5px 5px 10px;
+	margin: 2px 5px 2px 5px;
+	border-color: #280547;
+	border: 1px solid #280547;
+}
+.user_id
+{
+	padding-left: 10px;
+	float: left;
+}
+.created_at
+{
+	padding-right: 15px;
+	float: right;
+}
+#comment
+{
+	padding-left: 10px;
+}
+hr
+{
+	margin: 0px 0px 0px 0px;
+	border-top: 1px solid #280547;
+}
