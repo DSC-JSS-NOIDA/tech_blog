@@ -51,6 +51,7 @@ class PostsController extends Controller
 		$comments = comments::join('users','comments.user_id','=','users.id')
 								->select('comments.*','users.name')
 								->where('comments.post_id','=',$id)
+								->orderBy('created_at')
 								->get();
 		$comments = $comments->toArray();
 		return view('post',compact('post','like','my_like','user_id','id','comments'));
@@ -87,5 +88,16 @@ class PostsController extends Controller
 		}
 		else
 			return view('auth.login');
+	}
+
+	public function comment(Request $request)
+	{
+		$data = $request->only('post_id','user_id','comment');
+		var_dump($data);
+		comments::create([
+				'post_id'=>$data['post_id'],
+				'user_id'=>$data['user_id'],
+				'comment'=>$data['comment']
+			]);
 	}
 }

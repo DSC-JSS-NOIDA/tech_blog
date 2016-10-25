@@ -16,4 +16,29 @@ $(document).ready(function(){
 	$("#heart_login").click(function(){
 		alert("Please Login");
 	});
+
+	$("#comment_submit").click(function(){
+		var comment = $("#comment_text").val();
+		if(!comment)
+			alert("Seems an empty comment");
+		else
+		{
+			$("#comment_text").val('');
+			$.ajax({
+				type: 'POST',
+				url: '/comment',
+				headers: {
+	       			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	    		},
+				data: {
+					'user_id':user_id,
+					'post_id':post_id,
+					'comment':comment
+				},
+				success: function(data){
+					console.log(data);
+				}
+			});
+		}
+	});
 });

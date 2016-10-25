@@ -36,6 +36,10 @@
                 </div>
             @endif
         @endforeach
+        @if($i==0)
+            <!-- NO posts yet image -->
+            No POSTS YET
+        @endif
     </div>
 </div>
 @endsection

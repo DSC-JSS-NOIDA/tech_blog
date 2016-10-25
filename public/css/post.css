@@ -42,7 +42,7 @@ div.row.header
 	z-index: 1001;
 	bottom: 55px;
 }
-#comment_row
+.row.comment_row
 {
 	padding: 5px 5px 5px 10px;
 	margin: 2px 5px 2px 5px;
@@ -67,4 +67,33 @@ hr
 {
 	margin: 0px 0px 0px 0px;
 	border-top: 1px solid #280547;
+}
+#comment_submit
+{
+	float: right;
+	background-color: #280547;
+	border-radius: 0px;
+	border-color: #280547;
+	color: #fff;	
+}
+#comment_text
+{
+	width: 100%;
+	border-radius: 0px;
+	border: 1px solid rgb(40, 5, 71);
+	height: 100%
+}
+#comment_text_box
+{
+	padding-left: 0px;
+	height: 35px;
+}
+#comment_submit_box
+{
+	padding-right: 0px;
+}
+input:focus
+{
+	background-color: #280547;
+	color: #fff;
 }

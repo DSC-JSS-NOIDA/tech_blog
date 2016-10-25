@@ -20,7 +20,6 @@
 				<div class="row submit">
 					<input type="submit" name="submit" class="btn" value="PUBLISH"/>
 				</div>
-				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			</form>
 		</div>
 	</div>

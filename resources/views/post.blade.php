@@ -2,6 +2,7 @@
 
 @section('js')
 	<meta property="og:url"           content="http://localhost:8000/post/{{$post['id']}}" />
+	<meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{asset('css/post.css')}}">
 @endsection
 
@@ -24,12 +25,12 @@
 			<div class="row">
 				<div class="col-xs-12 col-md-6">
 					@if(empty($comments))
-						<div class="row" id="comment_row">
+						<div class="row comment_row">
 							Be the first to Review
 						</div>
 					@else
 						@foreach($comments as $comment)
-							<div class="row" id="comment_row">
+							<div class="row comment_row">
 								<div class="row">
 									<div class="user_id">
 										{{$comment["name"]}}
@@ -44,6 +45,24 @@
 								</div>
 							</div>
 						@endforeach
+					@endif
+				</div>
+				<div class="col-xs-12 col-md-6">
+					@if($user_id==0)
+						<div class="row comment_row">
+							Login to participate in discussion
+						</div>
+					@else
+						<div class="row comment_row">
+							<!-- <form> -->
+								<div class="col-xs-8" id="comment_text_box">
+									<input type="text" placeholder="Comment " id="comment_text"  />
+								</div>
+								<div class="col-xs-4" id="comment_submit_box">
+									<input type="submit" name="submit" id="comment_submit" class="btn" value="COMMENT"/>
+								</div>
+							<!-- </form> -->
+						</div>	
 					@endif
 				</div>
 			</div>
