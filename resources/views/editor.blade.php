@@ -17,6 +17,7 @@
 				<div class="row">
 					<textarea class="ckeditor" value="{{ $data['content']  }}" name="content" required="" />{{ $data['content']  }}</textarea>
 				</div>
+				{{ csrf_field() }}
 				<div class="row submit">
 					<input type="submit" name="submit" class="btn" value="PUBLISH"/>
 				</div>

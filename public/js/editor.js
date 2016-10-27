@@ -23,5 +23,5 @@ $("#inactive").hide();
             }
         });
     }
-    setInterval(checkevent,5000);
+    setInterval(checkevent,1000);
 // });

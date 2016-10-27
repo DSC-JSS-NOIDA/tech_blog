@@ -8,14 +8,18 @@
 
 @section('content')
 <div class="container">
+<!-- **********************************CHANGE STRUCTURE FOR DISPLAYING AUTHOR DETAILS******************* -->
 	<div class="row header">
+		<img class ="img-circle" src="{{ $hash }}" id="author_image" alt="{{ $post['author'] }}">
 		<!-- ID: {{ $post['id'] }}<br> -->
-		<div id="title" class="col-xs-12 col-md-6 col-lg-6">
+		<div id="title" class="col-xs-8">
 			{{ $post['title'] }} 
 		</div>
-		<div id="author" class="col-xs-9 col-md-4 col-lg-4">
+<!--
+ 		<div id="author" class="col-xs-9 col-md-4 col-lg-4">
 			&nbsp; by {{ $post['author'] }}
 		</div>
+-->
  	</div>
 	<div class="row content">
 		{!! $post['content'] !!}
@@ -34,14 +38,28 @@
 								<div class="row">
 									<div class="user_id">
 										{{$comment["name"]}}
+										<?php $comment_auth = md5(strtolower(trim($comment['email'])));
+										$comment_auth = "https://www.gravatar.com/avatar/".$comment_auth."?d=retro"."&s=80"."&r=pg"; ?>
+										<img class= "img-rounded" height=18px src="{{ $comment_auth }}">
+										@if($user_email==$comment['email'])
+											<span class="comment_edit" id="comment_edit" comment_id="{{$comment['id']}}">
+												Edit
+											</span>
+										@endif
 									</div>
 									<div class="created_at">
 										{{$comment["created_at"]}}
 									</div>
 								</div>
 								<hr>
-								<div class="row" id="comment">
+								<div class="row comment" id="comment" comment_id_original="{{$comment['id']}}">
 									{{$comment["comment"]}}
+								</div>
+								<div class="edit_comment" comment_id_edit="{{$comment['id']}}">
+									<!-- <form action="/update_comment" method="POST"> -->
+										<input type="text"  placeholder="{{$comment['comment']}}" comment_id_edit_text="{{$comment['id']}}" id="edit_comment_text" />
+										<input type="submit" name="submit" class="comment_update" comment_id_edit_button="{{$comment['id']}}" class="btn" value="Edit" />
+									<!-- </form> -->
 								</div>
 							</div>
 						@endforeach
@@ -86,7 +104,6 @@
 		<span class="count">{{$like}}</span>
 	@endif
 </div>
-
 @endsection
 
 @section('script')

@@ -15,6 +15,7 @@ Route::get('/','PostsController@allpost');
 Route::get('/post/{id}','PostsController@showpost');
 Route::get('/like/{post_id}/{user_id}','PostsController@like');
 Route::post('/comment','PostsController@comment');
+Route::post('/update_comment','PostsController@update_comment');
 
 Route::auth();
 
